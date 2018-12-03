@@ -1,0 +1,6 @@
+[submodule "vendor/stm8s"]
+	path = vendor/stm8s
+	url = https://github.com/the-cave/stm8s-header.git
+[submodule "vendor/button_debounce"]
+	path = vendor/button_debounce
+	url = https://github.com/the-cave/button-debounce.git
