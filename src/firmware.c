@@ -29,9 +29,9 @@ void toggle_and_count() {
 
   // count
   count++;
-  if (!(FLASH->IAPSR & FLASH_IAPSR_DUL)) {
-    FLASH->DUKR = FLASH_RASS_KEY2;
+  while (!(FLASH->IAPSR & FLASH_IAPSR_DUL)) {
     FLASH->DUKR = FLASH_RASS_KEY1;
+    FLASH->DUKR = FLASH_RASS_KEY2;
   }
   EEPROM->counting_value = count;
   FLASH->IAPSR &= ~FLASH_IAPSR_DUL;
