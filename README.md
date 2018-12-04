@@ -20,7 +20,7 @@ Board specific code is in `firmware.c` you can effortlessly port the software to
 
 Clone this repository with submodules and just `make`
 ```
-$ git clone --recurse-submodules https://github.com/midnight-wonderer/stm8-eeprom-bug.git
+$ git clone --recurse-submodules -b st-recommended-method https://github.com/midnight-wonderer/stm8-eeprom-bug.git
 $ cd stm8-eeprom-bug
 $ make
 ```
