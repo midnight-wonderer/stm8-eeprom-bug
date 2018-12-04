@@ -1,8 +1,8 @@
-# Buggy EEPROM code
+# EEPROM workaround for STM8
 
 ## What is it?
 
-It is the actual code mentioned in [the article about STM8 hardware bug](https://github.com/midnight-wonderer/stm8-eeprom-bug/wiki/STM8-EEPROM-unlocking-bug) that cause EEPROM writing instability issue. Read the article for more info and workaround of the issue.
+It is the proposed workaround code mentioned in [the article about STM8 hardware bug](https://github.com/midnight-wonderer/stm8-eeprom-bug/wiki/STM8-EEPROM-unlocking-bug) that cause EEPROM writing instability issue.
 
 ## The hardware
 
@@ -20,7 +20,7 @@ Board specific code is in `firmware.c` you can effortlessly port the software to
 
 Clone this repository with submodules and just `make`
 ```
-$ git clone --recurse-submodules https://github.com/midnight-wonderer/stm8-eeprom-bug.git
+$ git clone --recurse-submodules -b workaround-method https://github.com/midnight-wonderer/stm8-eeprom-bug.git
 $ cd stm8-eeprom-bug
 $ make
 ```
