@@ -1,6 +1,6 @@
-SHELL=/usr/bin/env bash
-SDCC=sdcc
-SDCCLIB=sdcclib
+SHELL:=/usr/bin/env bash
+SDCC?=sdcc
+SDAR?=sdar
 SRCDIR=./src
 BINDIR=./bin
 INCLUDES=\
@@ -15,9 +15,7 @@ ENTRY_OBJECT=$(subst /./,/,$(addprefix $(BINDIR)/,$(ENTRY_SOURCE_FILE:.c=.rel)))
 APP_OBJECTS=$(subst /./,/,$(addprefix $(BINDIR)/,$(APP_SOURCE_FILES:.c=.rel)))
 LIB_OBJECTS=$(subst /./,/,$(addprefix $(BINDIR)/,$(LIB_SOURCE_FILES:.c=.rel)))
 
-.PHONY: all build clean
-
-all: build
+.PHONY: build clean
 
 build: $(BINDIR)/program.hex
 
@@ -33,12 +31,12 @@ $(BINDIR)/%.rel: %.c
 
 $(BINDIR)/vendor.lib: $(LIB_OBJECTS)
 	[[ ! -z "$^" ]] &&\
-	$(SDCCLIB) $@ $^ ||\
+	$(SDAR) -rc $@ $^ ||\
 	touch $@
 
 $(BINDIR)/app.lib: $(APP_OBJECTS)
 	[[ ! -z "$^" ]] &&\
-	$(SDCCLIB) $@ $^ ||\
+	$(SDAR) -rc $@ $^ ||\
 	touch $@
 
 %.c: %.h
