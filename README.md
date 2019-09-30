@@ -12,7 +12,7 @@ Board specific code is in `firmware.c` you can effortlessly port the software to
 ## List of software prerequisites to compile the code
 
 * [Git](https://git-scm.com/) version >= 2.0
-* [Small Device C Compiler](http://sdcc.sourceforge.net/) version >= 3.8.3
+* [Small Device C Compiler](http://sdcc.sourceforge.net/) version >= 3.9.0
 * [GNU Make](https://www.gnu.org/software/make/)
 * [GNU Bash](https://www.gnu.org/software/bash/)
 
